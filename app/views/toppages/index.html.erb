@@ -1,6 +1,9 @@
 <% if logged_in? %>
-
-  <p>ログイン完了ユーザ: <%= current_user.name %></p>
+  
+    <div class="col-sm-8">
+      <%= render "posts/posts", posts: @posts %>
+    </div>
+  </div>
 <% else %>
   <div class="jumbotron jumbotron-fluid">
     <div class="container"></div>
