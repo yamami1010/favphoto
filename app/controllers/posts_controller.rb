@@ -26,17 +26,17 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
 
     if @post.update(post_params)
-      flash[:success] = 'Post は正常に更新されました'
+      flash[:success] = '投稿は正常に更新されました'
       redirect_to @post
     else
-      flash.now[:danger] = 'Post は更新されませんでした'
+      flash.now[:danger] = '投稿は更新されませんでした'
       render :edit
     end
   end
 
   def destroy
     @post.destroy
-    flash[:success] = "Postを削除しました。"
+    flash[:success] = "投稿を削除しました。"
     redirect_back(fallback_location: root_path)
   end
   
