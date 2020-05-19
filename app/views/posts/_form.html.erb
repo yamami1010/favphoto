@@ -1,0 +1,15 @@
+<%= form_with(model: post, local: true) do |f| %>
+    <div class="form-group">
+      <%= f.label :title, :タイトル %>
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :content, :本文 %>
+      <%= f.text_area :content, class: "form-control", rows: 5 %>
+    </div>
+    <div class="form-group">
+      <%= f.label :content, :写真を選択 %>
+      <%= f.file_field :image %>
+    </div>
+    <%= f.submit "投稿する", class: "btn btn-primary btn-block" %>
+<% end %>

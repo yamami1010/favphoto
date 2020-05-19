@@ -1,0 +1,84 @@
+_posts.html.erb
+
+<ul class="list-unstyled">
+  <% posts.each do |post| %>
+    <li class="media mb-3">
+      <img class="mr-2 rounded" src="<%= gravatar_url(post.user, { size: 50 }) %>" alt="">
+      <div class="media-body">
+        <div>
+          <%= link_to post.user.name, user_path(post.user) %> <span class="text-muted">posted at <%= post.created_at %></span>
+        </div>
+        <div>
+          <p class="mb-0"><%= post.title %></p>
+        </div>
+        <div>
+          <p class="mb-0"><%= post.content %></p>
+        </div>
+        <p>
+          <strong>Image:</strong>
+          <%= image_tag post.image.url if post.image? %>
+        </p>
+        <div>
+          <% if current_user == post.user %>
+            <%= link_to "Delete", post, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
+          <% end %>
+        </div>
+        <div class="col-sm-5">
+          <%= render "likes/like_button", post: post %>
+        </div>
+      </div>
+    </li>
+  <% end %>
+  <%= paginate posts %>
+</ul>
+
+<ul class="list-unstyled">
+  <% posts.each do |post| %>
+    <div>
+      <%= link_to post.user.name, user_path(post.user) %> <span class="text-muted">posted at <%= post.created_at %></span>
+    </div>
+    <div class="card" style="width: 50rem;">
+      <div class="card-img-top">
+          <%= image_tag post.image.url if post.image? %>
+        </div>
+      <div class="row no-gutters">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-12">
+          <div class="card-body">
+            <h5 class="card-title"><%= post.title %></h5>
+            <p class="card-text"><%= post.content %></p>
+          </div>
+        </div>
+        <div>
+          <% if current_user == post.user %>
+            <%= link_to "Delete", post, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
+          <% end %>
+        </div>
+        <div class="col-sm-5">
+          <%= render "likes/like_button", post: post %>
+        </div>
+      </div>
+    </div>
+
+  <% end %>
+  <%= paginate posts %>
+</ul>
+
+<%= f.submit 'いいね', class: 'btn btn-primary btn-sm' %>
+
+<%= form_with(model: @post, local: true) do |f| %>
+    <div class="form-group">
+      <%= f.label :title, :タイトル %>
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :content, :本文 %>
+      <%= f.text_area :content, class: "form-control", rows: 5 %>
+    </div>
+    <div class="form-group">
+      <%= f.label :content, :写真を選択 %>
+      <%= f.file_field :image %>
+    </div>
+    <%= f.submit "投稿する", class: "btn btn-primary btn-block" %>
+<% end %>
