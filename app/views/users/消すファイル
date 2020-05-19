@@ -82,3 +82,11 @@ _posts.html.erb
     </div>
     <%= f.submit "投稿する", class: "btn btn-primary btn-block" %>
 <% end %>
+
+<div class="jumbotron jumbotron-fluid">
+      <div class="text-center">
+        <h1>FavPhoto</h1>
+        <p>大好きな写真を投稿して共有しよう</p>
+        <%= link_to '新規登録', signup_path, class: 'btn btn-lg btn-primary' %>
+      </div>
+  </div>
