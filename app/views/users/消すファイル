@@ -90,3 +90,14 @@ _posts.html.erb
         <%= link_to '新規登録', signup_path, class: 'btn btn-lg btn-primary' %>
       </div>
   </div>
+  style="width: 50rem;"
+  
+  <div class="">
+   
+      <div class="text-center">
+        <h1>FavPhoto</h1>
+        <p>大好きな写真を投稿して共有しよう</p>
+          <%= link_to '新規登録', signup_path, class: 'btn btn-lg btn-primary' %>
+      </div>
+  </div>
+  <hr class="divider my-1" />

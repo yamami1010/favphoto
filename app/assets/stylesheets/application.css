@@ -15,11 +15,17 @@
  */
  
 
-.jumbotron {
+
+.main-visual {
   background-image: url("0D8C4787-3E42-43DB-87F2-92CD87D0A82E_1_201_a.jpeg");
   background-size: cover;
-  background-position: center 60%;
   width: 100%;
+  height: 650px;
+  color: #ffffff;
+}
+
+.container h2 {
+  margin-bottom: 50px;  
 }
 
 .like-btn {
@@ -29,3 +35,6 @@
 .like-btn-unlike {
   color: #ff2581;
 }
+
+
+
