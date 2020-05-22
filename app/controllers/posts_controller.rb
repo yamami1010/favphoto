@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :require_user_logged_in
-  before_action :correct_user, only: [:destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy]
   
   def new
     @post = Post.new
@@ -14,7 +14,7 @@ class PostsController < ApplicationController
     else
       @posts = current_user.posts.order(id: :desc).page(params[:page])
       flash.now[:danger] = "Postの投稿に失敗しました。"
-      render "toppages/index"
+      render "posts/new"
     end
   end
 

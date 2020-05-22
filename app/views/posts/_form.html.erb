@@ -1,4 +1,13 @@
 <%= form_with(model: post, local: true) do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation" class="alert alert-warning">
+      <ul class="mb-0">
+        <% @post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
     <div class="form-group">
       <%= f.label :title, :タイトル %>
       <%= f.text_field :title, class: "form-control" %>
