@@ -19,12 +19,12 @@
         </div>
         <div>
           <% if current_user == post.user %>
-            <%= link_to "編集", edit_post_path(post.id), class: 'btn btn-danger btn-sm' %>
+            <%= link_to "編集", edit_post_path(post.id), class: 'btn botton btn-sm' %>
           <% end %>
         </div>
         <div>
           <% if current_user == post.user %>
-            <%= link_to "Delete", post, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
+            <%= link_to "削除", post, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
           <% end %>
         </div>
       </div>

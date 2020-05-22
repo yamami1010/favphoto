@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  
   belongs_to :user
   mount_uploader :image, ImageUploader
   
@@ -10,6 +11,10 @@ class Post < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :users, through: :likes
   
+  def like_count
+    Like.where(post: self).count
+  end
+  
   private
   
   def image_size
@@ -17,4 +22,6 @@ class Post < ApplicationRecord
       errors.add(:image, "should be less then 5MB")
     end
   end
+  
+  
 end

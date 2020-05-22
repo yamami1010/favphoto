@@ -36,5 +36,39 @@
   color: #ff2581;
 }
 
+a.navbar-brand.logo-title {
+  color: #ff3300;
+}
 
+a.navbar-brand.logo-title:hover {
+  color: #ea96a5;
+}
 
+a.btn.btn-lg.botton {
+  background-color: #ff3300;
+  color: #d2d2d2;
+}
+
+a.btn.btn-lg.botton:hover {
+  background-color: #ea96a5;
+}
+
+input.btn.botton.btn-block {
+  background-color: #ff3300;
+  color: #d2d2d2;
+}
+
+input.btn.botton.btn-block:hover {
+  background-color: #ea96a5;
+}
+
+a.btn.botton.btn-sm {
+  background-color: #1e90ff;
+  color: #fff;
+}
+
+.list-unstyled .card {
+    margin-bottom: 50px;
+    padding-bottom: 10px;
+    border-bottom: solid 2px red;
+}
