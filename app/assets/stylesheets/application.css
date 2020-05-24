@@ -73,3 +73,16 @@ a.btn.botton.btn-sm {
     border-bottom: solid 2px red;
 }
 
+h1.text-uppercase.font-weight-bold {
+  color: rgba(255, 21, 2, 0.69);
+}
+
+p.font-weight-dark.mb-5 {
+  color: rgba(255, 21, 2, 0.69);
+}
+
+.card-img-top img {
+  width:100%;
+max-width: 100%;
+height: auto;
+}
